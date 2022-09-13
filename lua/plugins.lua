@@ -90,6 +90,10 @@ packer.startup({
     use("folke/tokyonight.nvim")
     --------------------- Others Plugins ------------------
     use ({"akinsho/toggleterm.nvim"})
+    -- nvim-autopairs
+    use ("windwp/nvim-autopairs")
+    -- git
+    use ("lewis6991/gitsigns.nvim")
     if paccker_bootstrap then
       packer.sync()
     end
