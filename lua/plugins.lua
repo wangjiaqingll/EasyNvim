@@ -94,6 +94,7 @@ packer.startup({
     use ("windwp/nvim-autopairs")
     -- git
     use ("lewis6991/gitsigns.nvim")
+
     if paccker_bootstrap then
       packer.sync()
     end
