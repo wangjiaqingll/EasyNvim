@@ -37,20 +37,35 @@ packer.startup({
     use("wbthomason/packer.nvim")
     ---------------------- Plugins ------------------------
     -- nvim-tree 目录树
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
+    use ({
+      'kyazdani42/nvim-tree.lua', 
+      requires = 'kyazdani42/nvim-web-devicons'
+    })
     -- bufferline
-    use {
-        'akinsho/bufferline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
-
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+    use ({
+      'akinsho/bufferline.nvim', 
+      requires = {"kyazdani42/nvim-web-devicons", "moll/vim-bbye"}
+    })
+    -- treesitter 高亮
+    use ({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    -- lualine
+    use ({"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}})
+    use ("arkav/lualine-lsp-progress")
+    -- telescope
+    use ({
+      "nvim-telescope/telescope.nvim",
+      requires = {"nvim-lua/plenary.nvim"}
+    })
+    --telescope extensions
+    use ("LinArcX/telescope-env.nvim")
+    use ("nvim-telescope/telescope-ui-select.nvim")
+    -- dashboard-nvim
+    use ("glepnir/dashboard-nvim")
+    -- project
+    use ("ahmedkhalf/project.nvim")
+    use ("p00f/nvim-ts-rainbow")
+    -- indent-blankline
+    use ("lukas-reineke/indent-blankline.nvim")
     --------------------- LSP -----------------------------
     -- lspconfig
     use {
@@ -94,6 +109,18 @@ packer.startup({
     use ("windwp/nvim-autopairs")
     -- git
     use ("lewis6991/gitsigns.nvim")
+    -- surround
+    use ("ur4ltz/surround.nvim")
+    -- comment
+    use ("numToStr/Comment.nvim")
+    -- vimspector
+    use ("puremourning/vimspector")
+
+    use ("mfussenegger/nvim-dap")
+    use ("theHamsta/nvim-dap-virtual-text")
+    use ("rcarriga/nvim-dap-ui")
+
+    use ("j-hui/fidget.nvim")
     if paccker_bootstrap then
       packer.sync()
     end
